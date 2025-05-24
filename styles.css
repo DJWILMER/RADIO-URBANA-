@@ -1,0 +1,191 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+}
+
+#zeno-player-container {
+    width: 690px;
+    height: 690px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.player-wrapper {
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.play-pause-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.5em;
+}
+
+.play-pause-btn:hover {
+    background-color: #45a049;
+}
+
+.station-info {
+    flex-grow: 1;
+}
+
+.station-name {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.station-status {
+    color: #777;
+    font-size: 18px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#volume-slider {
+    width: 150px;
+    accent-color: #4CAF50;
+}
+
+.listeners-map {
+    width: 100%;
+    height: 350px;
+    margin-top: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.listener-count {
+    text-align: center;
+    margin-top: 15px;
+    color: #777;
+    font-size: 18px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+    padding: 15px 0;
+    border-top: 1px solid #f0f0f0;
+    flex-direction: row;
+    width: 100%;
+}
+
+.social-icon {
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon:hover {
+    color: #4CAF50;
+}
+
+.social-icon i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-social-menu {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.social-menu-toggle {
+    background-color: #4CAF50;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.social-menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+.social-menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-social-menu:hover .social-menu-links {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.floating-social-menu .social-icon {
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.floating-social-menu .social-icon:hover {
+    transform: scale(1.1);
+}
+
+.floating-social-menu .social-icon i {
+    color: #4CAF50;
+}
